@@ -16,6 +16,8 @@ print(shp.crs)
 # Extract Flanders
 flanders = shp[shp['Nom'].isin(['Vlaams Gewest'])]
 flanders.plot()
+plt.title('Lambert 2008')
+plt.savefig('lambert2008', bbox_inches='tight')
 plt.show()
 
 # Re-Projecting | Re-projecting is the process of changing the representation of locations from one coordinate system
@@ -25,6 +27,8 @@ plt.show()
 
 flanders_wgs = flanders.to_crs("EPSG:4326")
 flanders_wgs.plot()
+plt.title('WGS84')
+plt.savefig('wgs84', bbox_inches='tight')
 plt.show()
 
 
